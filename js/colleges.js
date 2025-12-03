@@ -1,15 +1,16 @@
-// handle search form
-document.querySelector(".college-search-form").addEventListener("submit", async function Submit (event) {
-    event.preventDefault();
+const searchInput = document.querySelector(".search-input");
+const colleges = document.querySelectorAll(".college");
 
-    const input = document.querySelector(".search-input").value;
-    const searchedList = await getSearchResults(input);
+searchInput.addEventListener("input", function () {
+    const text = searchInput.value.toLowerCase();
 
-    const societyList = document.querySelector(".colleges-container");
-    societyList.innerHTML = "";
+    colleges.forEach(college => {
+        const collegeName = college.querySelector("summary").textContent.toLowerCase();
 
-    for (const college of searchedList) {
-        societyList.innerHTML += collegeTemplate(college);
-    }
-})
-
+        if (collegeName.includes(text)) {
+            college.style.display = "";
+        } else {
+            college.style.display = "none";
+        }
+    });
+});
