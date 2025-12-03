@@ -1,4 +1,94 @@
-header,
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, sans-serif;
+
+}
+
+body,
 footer {
+    font-size: 16px;
+    color: #333;
+}
+
+/* 
+   Header Styles
+    */
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header .logo img {
+
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* Header Navigation Links */
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    font-size: 16px;
+    /* Slightly smaller font to match smaller logo */
+}
+
+header nav a:hover {
+    color: #006EB8;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ===========================
+   Footer Styles
+   =========================== */
+footer {
+    background-color: #006EB8;
+    color: #ffffff;
+    padding: 30px 16px;
     text-align: center;
+    margin-top: 50px;
+}
+
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+footer nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
 }
