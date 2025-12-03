@@ -1,7 +1,9 @@
+const form = document.querySelector(".college-search-form");
 const searchInput = document.querySelector(".search-input");
 const colleges = document.querySelectorAll(".college");
 
-searchInput.addEventListener("input", function () {
+// Reusable function
+function filterColleges() {
     const text = searchInput.value.toLowerCase();
 
     colleges.forEach(college => {
@@ -13,4 +15,13 @@ searchInput.addEventListener("input", function () {
             college.style.display = "none";
         }
     });
+}
+
+// Live filtering
+searchInput.addEventListener("input", filterColleges);
+
+// Filter on submit
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    filterColleges();
 });
