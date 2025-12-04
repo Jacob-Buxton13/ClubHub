@@ -221,6 +221,40 @@ main {
   line-height: 1.4;
 }
 
+.society-card .meeting-info {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Loading, Error, and No Results States */
+.loading, .error, .no-results {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+  grid-column: 1 / -1;
+}
+
+.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.loading {
+  color: #006EB8;
+  font-style: italic;
+}
+
+.no-clubs {
+  color: #999;
+  font-style: italic;
+  padding: 0.5rem;
+}
+
 /* ===========================
    Colleges Page
    =========================== */
