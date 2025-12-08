@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Society Hub</title>
+  <title>Club Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     * {
@@ -117,7 +117,7 @@
     }
 
     /* Society cards */
-    .society-list {
+    #society-list {
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -200,7 +200,7 @@
   <!-- Banner / hero section -->
   <section class="hero">
     <div class="hero-inner">
-      <h1 class="hero-title">Society Hub</h1>
+      <h1 class="hero-title">Club Hub</h1>
     </div>
   </section>
 
@@ -215,29 +215,8 @@
       </div>
     </div>
 
-    <div class="society-list">
-      <article class="society-card">
-        <h3>Society Name 1</h3>
-        <p>
-          Short description of the society goes here. Explain what it does and
-          who it’s for.
-        </p>
-      </article>
-
-      <article class="society-card">
-        <h3>Society Name 2</h3>
-        <p>
-          Another society description with a couple of lines of text to match
-          your sketch.
-        </p>
-      </article>
-
-      <article class="society-card">
-        <h3>Society Name 3</h3>
-        <p>
-          One more example society so you can see how multiple cards look.
-        </p>
-      </article>
+    <div id="society-list">
+      
     </div>
   </main>
 
@@ -254,7 +233,29 @@
       United States
     </div>
   </footer>
+  
+  <!-- Funny script integration -->
+  <script>
+
+    function makecard(name,desc){
+      let title = document.createElement("h3");
+      title.innerHTML=name;
+      let carddesc = document.createElement("p");
+      carddesc.innerHTML=desc;
+      let card = document.createElement("article");
+      card.className = "society-card"
+      card.appendChild(title)
+      card.appendChild(carddesc)
+      return card
+    }
+
+    function appendcard(name, desc, dest){
+      card = makecard(name,desc)
+      dest.appendChild(card)
+    }
+
+    appendcard("I AM ON SUGAR","PLEASE SEND HELP",document.getElementById("society-list"))
+  </script>
 
 </body>
-
 </html>
