@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Colleges</title>
   <link href="css/colleges.css" rel="stylesheet" />
-  <script src="js/colleges.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/colleges.js" type="module"></script>
 </head>
 
 <body>
@@ -22,12 +23,12 @@
   </header>
   <main class="colleges">
     <div class="title-container">
-      <h1>Societies by College at BYU-Idaho</h1>
+      <h1>Clubs by College at BYU-Idaho</h1>
       <form class="college-search-form" method="get" action="">
         <input class="search-input" type="text" name="q" placeholder="Search ..." />
         <button class="search-btn">
           <svg class="icon">
-            <use xlink:href="/images/sprite.symbol.svg#search"></use>
+            <use xlink:href="images/sprite.symbol.svg#search"></use>
           </svg>
         </button>
       </form>
@@ -59,5 +60,7 @@
     </div>
   </footer>
 </body>
+
+
 
 </html>
