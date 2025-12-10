@@ -47,11 +47,16 @@ function displayClubs(clubs) {
       ? description.substring(0, 150) + '...' 
       : description;
     
+    const meetingInfo = [];
+    if (club.meeting_day) meetingInfo.push(escapeHtml(club.meeting_day));
+    if (club.meeting_time) meetingInfo.push(escapeHtml(club.meeting_time));
+    const meetingText = meetingInfo.length > 0 ? meetingInfo.join(' at ') : '';
+    
     return `
       <article class="society-card">
         <h3>${escapeHtml(club.name)}</h3>
         <p>${escapeHtml(truncatedDesc)}</p>
-        ${club.meeting_time ? `<p class="meeting-info">📅 ${escapeHtml(club.meeting_time)}</p>` : ''}
+        ${meetingText ? `<p class="meeting-info">📅 ${meetingText}</p>` : ''}
         ${club.meeting_location ? `<p class="meeting-info">📍 ${escapeHtml(club.meeting_location)}</p>` : ''}
       </article>
     `;
